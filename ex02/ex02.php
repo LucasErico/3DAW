@@ -23,9 +23,18 @@
             break;
     
         case "/":
-            $result = $v1 / $v2;
+            if($v2 == 0)
+            {
+                $result = "falha";
+            }
+            else
+            {
+                $result = $v1 / $v2;
+            }
+           
             break;
     }
+    
 ?>
 
 <!DOCTYPE html>
