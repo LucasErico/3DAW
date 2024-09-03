@@ -1,0 +1,3 @@
+nome;sigla;carga
+TESTE;IZUMI;20
+Teste;FAC;80
