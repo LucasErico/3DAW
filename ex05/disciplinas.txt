@@ -1,0 +1,3 @@
+nome;sigla;carga
+Fundamentos de Algoritmo;FAC;80
+Interface Homem Máquina;IHM;80

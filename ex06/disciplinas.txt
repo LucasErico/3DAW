@@ -1,0 +1,2 @@
+nome;sigla;carga
+Teste;TST;1000
