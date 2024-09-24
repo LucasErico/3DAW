@@ -1,0 +1,7 @@
+numPergunta;pergunta;opc_A;opc_B;opc_C;opc_D;gabarito
+10;Teste?;Vasco;Flamengo;Botafogo;Fluminense;Fluminense
+20;Teste?;Vasco;Flamengo;Botafogo;Fluminense;Fluminense
+70;Teste?;Vasco;Flamengo;Botafogo;Fluminense;Fluminense
+70;Teste?;Vasco;Flamengo;Botafogo;Fluminense;Fluminense
+70;Teste?;Vasco;Flamengo;Botafogo;Fluminense;Fluminense
+70;Teste?;Vasco;Flamengo;Botafogo;Fluminense;Fluminense
