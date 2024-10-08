@@ -1,7 +1,8 @@
 <?php
 
     $msg = "";
-
+    $numPergunta = 1;
+   
     if ($_SERVER['REQUEST_METHOD'] == 'POST')  
     {
         $pergunta = $_POST["pergunta"];
@@ -22,20 +23,19 @@
         else
         {
             $arqDisc = fopen("question.txt","r") or die("erro ao abrir arquivo");
+            $numPergunta = -1;
             while(!feof($arqDisc)) 
             {
+                $numPergunta++;
                 $linha = fgets($arqDisc);
-                $colunaDados = explode(";", $linha);
-                (int)$numAnt = intval($colunaDados[0]);
-            }
-
+                $colunaDados = explode(";", $linha);    
+            };
             fclose($arqDisc);
         }
 
-        $num = 70;
-   
+        
         $arqDisc = fopen("question.txt","a") or die("erro ao criar arquivo");
-        $linha = $num . ";" . $pergunta . ";" . $opc_A . ";" . $opc_B . ";" . $opc_C . ";" . $opc_D . ";" . $gabarito . "\n";
+        $linha = $numPergunta . ";" . $pergunta . ";" . $opc_A . ";" . $opc_B . ";" . $opc_C . ";" . $opc_D . ";" . $gabarito . "\n";
         fwrite($arqDisc, $linha);
         fclose($arqDisc);
             
@@ -74,7 +74,9 @@
     <br><br>
     <input type="submit" value="Cadastrar Nova Pergunta">
 </form>
-<p><?php echo $msg ?></p>
+<p>
+    <?php echo $msg ?>
+</p>
 <br>
 </main>
 </body>

@@ -14,28 +14,42 @@
             <a href="listarUma.php">Listar Uma</a>
         </nav>
 </header>
-<h1>Listar Perguntas</h1>
-<table>
-    <tr><th>Pergunta</th><th>Opção A</th><th>Opção B</th><th>Opção C</th><th>Opção D</th><th>Gabarito</th></tr>
+<h1>Excluir da Pergunta</h1>
+<form action="excluir.php" method="POST">
+    Número de Pergunta: <input type="text" name="numPergunta">
+    <br><br>
+    <input type="submit" value="Excluir Pergunta">
+</form>
+
 <?php
+
+    $numPergunta = $_POST['numPergunta'];
+
+
+
    $arqDisc = fopen("question.txt","r") or die("erro ao abrir arquivo");
- 
-   while(!feof($arqDisc)) 
-   {
-        $linha = fgets($arqDisc);
-        $linha = fgets($arqDisc);
-        $colunaDados = explode(";", $linha);
- 
- // <tr><td><?php echo $colunaDados[0] </td>
-        echo "<tr><td>" . $colunaDados[0] . "</td>" .
-            "<td>" . $colunaDados[1] . "</td>" .
-            "<td>" . $colunaDados[2] . "</td>" .
-            "<td>" . $colunaDados[3] . "</td>" .
-            "<td>" . $colunaDados[4] . "</td>" .
-            "<td>" . $colunaDados[5] . "</td></tr>";
+   $temp = fopen("temp.txt", "w");
+   while (!feof($arqDisc)) {
+  
+    $linha = fgets($arqDisc);
+    $dados = explode(";", $linha);
+    if ($dados[0] == $numPergunta) {
+      continue;
     }
+    
+    fwrite($temp, $linha);
+  }
+
+
+    fclose($arqDisc);
+    fclose($temp);
+
+
+    unlink("question.txt");
+
+    rename("temp.txt", "question.txt");
  
-   fclose($arqDisc);
+
     $msg = "Deu tudo certo!!!";
 ?>
 </table>

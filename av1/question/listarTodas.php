@@ -16,23 +16,22 @@
 </header>
 <h1>Listar Perguntas</h1>
 <table>
-    <tr><th>Pergunta</th><th>Opção A</th><th>Opção B</th><th>Opção C</th><th>Opção D</th><th>Gabarito</th></tr>
+    <tr><th>Número de Pergunta</th><th>Pergunta</th><th>Opção A</th><th>Opção B</th><th>Opção C</th><th>Opção D</th><th>Gabarito</th></tr>
 <?php
    $arqDisc = fopen("question.txt","r") or die("erro ao abrir arquivo");
- 
+   $linha = fgets($arqDisc);
    while(!feof($arqDisc)) 
    {
         $linha = fgets($arqDisc);
-        $linha = fgets($arqDisc);
         $colunaDados = explode(";", $linha);
  
- // <tr><td><?php echo $colunaDados[0] </td>
-        echo "<tr><td>" . $colunaDados[0] . "</td>" .
-            "<td>" . $colunaDados[1] . "</td>" .
-            "<td>" . $colunaDados[2] . "</td>" .
-            "<td>" . $colunaDados[3] . "</td>" .
-            "<td>" . $colunaDados[4] . "</td>" .
-            "<td>" . $colunaDados[5] . "</td></tr>";
+        echo "<tr><td>" . $colunaDados[0] . 
+        "<td>" . $colunaDados[1] . "</td>" . 
+        "<td>" . $colunaDados[2] . "</td>" . 
+        "<td>" . $colunaDados[3] . "</td>" . 
+        "<td>" . $colunaDados[4] . "</td>" . 
+        "<td>" . $colunaDados[5] . "</td>" . 
+        "<td>" . $colunaDados[6] . "</td></tr>";
     }
  
    fclose($arqDisc);

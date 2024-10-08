@@ -25,6 +25,7 @@
 <table>
     <tr><th>Pergunta</th><th>Opção A</th><th>Opção B</th><th>Opção C</th><th>Opção D</th><th>Gabarito</th></tr>
 <?php
+    $msg = " ";
     if ($_SERVER['REQUEST_METHOD'] == 'POST')  
     {   
         $numPergunta = $_POST["numPergunta"];
