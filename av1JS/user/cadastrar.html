@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar Usuário</title>
+    <script>
+        function EnviarUser() {
+            //pegando id do formulário
+            let objForm = document.getElementById("formUser");
+            console.log("objForm: " + objForm.innerHTML);
+
+            //obtendo matrícula
+            let nome = document.getElementById("nome").value;
+
+            //obtendo nome
+            let email = document.getElementById("email").value;
+
+            //obtendo email
+            let senha = document.getElementById("senha").value;
+
+            /*
+            let objForm2 = {"matricula": matricula,"nome":nome,"email":email};
+            let objJson = JSON.stringify(objForm);
+
+            //impressão para fins de teste
+            console.log("objForm2: " + objForm2);
+            console.log("JSON: " + objJson);
+            */
+
+            //requisição xml
+            let xmlhttp = new XMLHttpRequest();
+            console.log("1");
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log("Chegou a resposta OK: " + this.responseText);
+                    console.log("2");
+                    document.getElementById("msg").innerHTML = this.responseText;
+                } else
+                    if (this.readyState < 4) {
+                        console.log("3: " + this.readyState);
+                    } else
+                        console.log("Requisicao falhou: " + this.status);
+            }
+            console.log("4");
+            xmlhttp.open("GET", "http://localhost/3DAW/av1JS/user/cadastrar.php?nome=" + nome +
+                            "&email=" + email + "&senha=" + senha);
+            xmlhttp.send();
+            console.log("enviei form");
+            console.log("5");
+        }
+        function ValidaForm(pnome, pemail, psenha) {
+            let msg = "";
+            if (pnome == "") msg = "nome não preenchido. <br>";
+
+            return msg;
+        }
+    </script>
+</head>
+<body>
+    <main>
+        <h1>Cadastrar Usuário</h1>
+        <nav>
+            <a href="../index.html">Início</a>
+            <a href="user/cadastrar.php">Cadastrar</a>
+            <a href="question/criar.php">Incluir</a>
+            <a href="question/alterar.php">Alterar</a>
+            <a href="question/excluir.php">Excluir</a>
+            <a href="question/listarTodas.php">Listar Todas</a>
+            <a href="question/listarUma.php">Listar Uma</a>
+        </nav>
+        <form action="" method=GET name="formUser" id="formUser">
+            Nome: <input type=text name="nome" id="nome" required> <br>
+            Email: <input type=text name="email" id="email"> <br>
+            Senha <input type=text name="senha" id="senha"> <br>
+            <br><br>
+            <input type="button" value="Cadastrar" onclick="EnviarUser();">
+        </form>
+        <p id="msg"></p>
+       </main>
+</body>
+</html>
+
+

@@ -1,0 +1,12 @@
+matricula;nome;email
+123;Teste;Teste
+;Teste;lucas.23204708360005@faeterj-rio.edu.br
+;Teste;lucas.23204708360005@faeterj-rio.edu.br
+;Teste;lucas.23204708360005@faeterj-rio.edu.br
+;Teste;lucas.23204708360005@faeterj-rio.edu.br
+;Vasco;lucaserico2020@gmail.com
+;Vasco;lucaserico2020@gmail.com
+;Teste;lucaserico2020@gmail.com
+;;lucaserico2020@gmail.com
+;;lucaserico2020@gmail.com
+;;Teste
