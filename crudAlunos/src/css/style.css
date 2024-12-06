@@ -1,0 +1,35 @@
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+li > button {
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: black;
+    color: white;
+}
+
+main {
+    max-width: 80%;
+    margin: auto;
+}
+
+table, tbody, thead, th, td {
+    border:1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+}

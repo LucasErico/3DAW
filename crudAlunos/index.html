@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="src/css/style.css">
+        <script src="src/js/script.js"></script>
+        <title>Alunos</title>
+    </head>
+
+    <body>
+        <nav>
+            <ul>
+                <li><button onclick="menuTest(1)">Incluir</button></li>
+                <li><button onclick="menuTest(2)">Alterar</button></li>
+                <li><button onclick="menuTest(3)">Excluir</button></li>
+                <li><button onclick="menuTest(4)">Listar Todos</button></li>
+                <li><button onclick="menuTest(5)">Listar Um</button></li>
+            </ul>   
+        </nav>
+
+        <main>
+            <section style="display: none;" id="1">
+                <h1>Adicionar</h1>
+
+                <form action="" method="POST">
+                    Nome: <input type="text" name="nome" id= "nome" required>
+                    <br><br>
+                    Email: <input type="text" name="email" id= "email" required>
+                    <br><br>
+                    Matricula: <input type="text" name="matri" id= "matri" required>
+                    <br><br>
+                    <button type="button" onclick="incluir()">Incluir</button>
+                </form>
+            </section>
+            
+            <section style="display: none;" id="2">
+                <h1>Alterar</h1>
+                <form action="" method="POST">
+                    Matricula: <input type="text" name="matri" id= "matriAlt" required>
+                    <br><br>
+                    Novo Email: <input type="text" name="novoemail" id="novoemail" required>
+                    <br><br>
+                    <button type="button" onclick="alterar()">Alterar</button>
+                </form>
+            </section>
+            
+            <section style="display: none;" id="3">
+                <h1>Excluir</h1>
+                <form action="" method="POST">
+                    Matricula: <input type="text" name="matri" id= "matriExc" required>
+                    <br><br>
+                    <button type="button" onclick="excluir()">Excluir</button>
+                </form>
+            </section>
+            
+            <section style="display: none;" id="4">
+                <h2>Listar todas</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Matrícula</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-alunos">
+                    </tbody>
+                </table>
+                <button onclick="listarTodos()">Listar Todas</button>
+            </section>
+            
+            <section style="display: none;" id="5">
+                <h1>Listar um Usuário</h1>
+                <form action="" method="POST">
+                    Matricula: <input type="text" name="matri" id= "matriLst" required>
+                    <br><br>
+                    <button type="button" onclick="listarUm()">Listar um</button>
+                </form>
+                <br>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Matrícula</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-aluno">
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </body>
+</html>
